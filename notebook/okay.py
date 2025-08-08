@@ -44,7 +44,7 @@ acc = accuracy_score(pred,y_test)
 print(acc)
 
 
-sample = (1,85,66,29,0,26.6,0.351,31)
+sample = (1,89,66,23,94,28.1,0.167,21)
 
 
 sample_array = np.asarray(sample)
@@ -55,6 +55,12 @@ sample_reshaped = sample_array.reshape(1,-1)
 std_dat = scaler.transform(sample_reshaped)
 # print(std_dat)
 
-prediction = model.predict(sample_reshaped)
+prediction = model.predict(std_dat)
 
 print(prediction)
+
+
+import pickle
+
+filename = "diabetes.wsv"
+pickle.dump(model,open(filename,"wb"))
