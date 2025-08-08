@@ -10,7 +10,6 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8501
 
-CMD [ "streamlit", "run", "stream.py" ]
+CMD [ "streamlit", "run", "stream.py", "--server.address=0.0.0.0", "--server.port=8501" ]
 
 
-3,78,50,32,88,31,0.248,26,1
